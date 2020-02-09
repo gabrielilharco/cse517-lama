@@ -21,7 +21,7 @@ To reproduce the results:
 
 ### 1. Create conda environment and install requirements
 
-(optional) It might be a good idea to use a separate conda environment. It can be created by running:
+Use a separate conda environment. It can be created by running:
 ```
 conda create -n lama37 -y python=3.7 && conda activate lama37
 pip install -r requirements.txt
@@ -71,7 +71,21 @@ This repository also provides a script (`scripts/create_lama_uhn.py`) to create 
 ### Negated-LAMA
 This repository also gives the option to evalute how pretrained language models handle negated probes (Kassner et al., 2019), set the flag `use_negated_probes` in `scripts/run_experiments.py`. Also, you should use this version of the LAMA probe https://dl.fbaipublicfiles.com/LAMA/negated_data.tar.gz
 
-## Other References
+
+## Reference:
+
+The LAMA probe is described in the following paper:
+
+```bibtex
+@inproceedings{petroni2019language,
+  title={Language Models as Knowledge Bases?},
+  author={F. Petroni, T. Rockt{\"{a}}schel, A. H. Miller, P. Lewis, A. Bakhtin, Y. Wu and S. Riedel},
+  booktitle={In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019},
+  year={2019}
+}
+```
+
+### Other References
 
 - __(Kassner et al., 2019)__ Nora Kassner, Hinrich Schütze. _Negated LAMA: Birds cannot fly_. arXiv preprint arXiv:1911.03343, 2019.
 
@@ -86,21 +100,6 @@ This repository also gives the option to evalute how pretrained language models 
 - __(Radford et al., 2018)__ Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. _Improving language understanding by generative pre-training_.
 
 - __(Liu et al., 2019)__ Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov. 2019. _RoBERTa: A Robustly Optimized BERT Pretraining Approach_. arXiv preprint arXiv:1907.11692.
-
-
-
-## Reference:
-
-The LAMA probe is described in the following paper:
-
-```bibtex
-@inproceedings{petroni2019language,
-  title={Language Models as Knowledge Bases?},
-  author={F. Petroni, T. Rockt{\"{a}}schel, A. H. Miller, P. Lewis, A. Bakhtin, Y. Wu and S. Riedel},
-  booktitle={In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2019},
-  year={2019}
-}
-```
 
 ## Licence
 
