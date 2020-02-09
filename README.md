@@ -1,6 +1,8 @@
 # LAMA: LAnguage Model Analysis
 <img align="middle" src="img/logo.png" height="256" alt="LAMA">
 
+This repository is forked from https://github.com/facebookresearch/LAMA
+
 LAMA is a probe for analyzing the factual and commonsense knowledge contained in pretrained language models. <br>
 #### The dataset for the LAMA probe is available at https://dl.fbaipublicfiles.com/LAMA/data.zip <br>
 LAMA contains a set of connectors to pretrained language models. <br>
