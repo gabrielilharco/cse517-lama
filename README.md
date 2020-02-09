@@ -19,7 +19,7 @@ Actually, LAMA is also a beautiful animal.
 
 To reproduce the results:
 
-### 1. Create conda environment and install requirements
+#### 1. Create conda environment and install requirements
 
 Use a separate conda environment. It can be created by running:
 ```
@@ -27,7 +27,7 @@ conda create -n lama37 -y python=3.7 && conda activate lama37
 pip install -r requirements.txt
 ```
 
-### 2. Download the data
+#### 2. Download the data
 
 ```bash
 wget https://dl.fbaipublicfiles.com/LAMA/data.zip
@@ -35,9 +35,9 @@ unzip data.zip
 rm data.zip
 ```
 
-### 3. Download the models
+#### 3. Download the models
 
-#### DISCLAIMER: ~55 GB on disk
+Disk usage: ~55 GB.
 
 Install spacy model
 ```bash
@@ -54,7 +54,7 @@ The script will create and populate a _pre-trained_language_models_ folder.
 If you are interested in a particular model please edit the script.
 
 
-### 4. Run the experiments
+#### 4. Run the experiments
 
 ```bash
 python scripts/run_experiments.py
