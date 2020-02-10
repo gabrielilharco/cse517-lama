@@ -75,6 +75,7 @@ def run_experiments(
     relations,
     data_path_pre,
     data_path_post,
+    dataset_name,
     input_param={
         "lm": "bert",
         "label": "bert_large",
@@ -104,8 +105,8 @@ def run_experiments(
             "bert_vocab_name": "vocab.txt",
             "batch_size": 2,
             "logdir": "output",
-            "full_logdir": "output/results/{}/{}".format(
-                input_param["label"], relation["relation"]
+            "full_logdir": "output/results/{}/{}/{}".format(
+                input_param["label"], dataset_name, relation["relation"]
             ),
             "lowercase": False,
             "max_sentence_length": 100,
@@ -173,7 +174,7 @@ def get_TREx_parameters(data_path_pre="data/"):
     relations = load_file("{}relations.jsonl".format(data_path_pre))
     data_path_pre += "TREx/"
     data_path_post = ".jsonl"
-    return relations, data_path_pre, data_path_post
+    return relations, data_path_pre, data_path_post, "TREx"
 
 
 def get_GoogleRE_parameters():
@@ -196,21 +197,21 @@ def get_GoogleRE_parameters():
     ]
     data_path_pre = "data/Google_RE/"
     data_path_post = "_test.jsonl"
-    return relations, data_path_pre, data_path_post
+    return relations, data_path_pre, data_path_post, "GoogleRE"
 
 
 def get_ConceptNet_parameters(data_path_pre="data/"):
     relations = [{"relation": "test"}]
     data_path_pre += "ConceptNet/"
     data_path_post = ".jsonl"
-    return relations, data_path_pre, data_path_post
+    return relations, data_path_pre, data_path_post, "ConceptNET"
 
 
 def get_Squad_parameters(data_path_pre="data/"):
     relations = [{"relation": "test"}]
     data_path_pre += "Squad/"
     data_path_post = ".jsonl"
-    return relations, data_path_pre, data_path_post
+    return relations, data_path_pre, data_path_post, "Squad"
 
 
 def run_all_LMs(parameters):
