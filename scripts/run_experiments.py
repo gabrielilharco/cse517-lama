@@ -4,6 +4,10 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 #
+import sys
+sys.path.append('../')
+sys.path.append('./')
+
 import argparse
 from batch_eval_KB_completion import main as run_evaluation
 from batch_eval_KB_completion import load_file
@@ -15,8 +19,16 @@ import os
 from os.path import isfile, join
 from shutil import copyfile
 from collections import defaultdict
+import datetime
 
 LMs = [
+#    {
+#        "lm": "gpt",
+#        "label": "gpt",
+#        "models_names": ["gpt"],
+#        "gpt_model_dir": None,  # Use from huggingface
+#        "gpt_model_name": "openai-gpt",
+#    },
     {
         "lm": "transformerxl",
         "label": "transformerxl",
@@ -90,7 +102,7 @@ def run_experiments(
             "common_vocab_filename": "pre-trained_language_models/common_vocab_cased.txt",
             "template": "",
             "bert_vocab_name": "vocab.txt",
-            "batch_size": 32,
+            "batch_size": 2,
             "logdir": "output",
             "full_logdir": "output/results/{}/{}".format(
                 input_param["label"], relation["relation"]
@@ -203,7 +215,7 @@ def get_Squad_parameters(data_path_pre="data/"):
 
 def run_all_LMs(parameters):
     for ip in LMs:
-        print(ip["label"])
+        print(ip["label"], datetime.datetime.now())
         run_experiments(*parameters, input_param=ip, use_negated_probes=False)
 
 
